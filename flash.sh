@@ -106,7 +106,6 @@ flash_heimdall()
 	if [ $? -ne 0 ]; then
 		echo Couldn\'t reboot into download mode. Hope you\'re already in download mode
 	fi
-
 	case $1 in
 	"system")
 		$HEIMDALL flash --factoryfs out/target/product/$DEVICE/$1.img
@@ -215,6 +214,9 @@ case "$DEVICE" in
 	flash_heimdall $PROJECT
 	;;
 
+"galaxys3")
+	flash_heimdall $PROJECT
+	;;
 *)
 	if [[ $(type -t flash_${DEVICE}) = function ]]; then
 		flash_${DEVICE} $PROJECT
