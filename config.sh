@@ -58,6 +58,7 @@ case "$1" in
        echo DEVICE=galaxy-s-blaze >> .tmp-config &&
 	repo_sync galaxy-s-blaze &&
 	(cd device/samsung/t769 && ./extract-files.sh)
+	;;
     
 "galaxy-s2")
 	echo DEVICE=galaxys2 >> .tmp-config &&
